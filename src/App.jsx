@@ -39,53 +39,57 @@ function App() {
 
   return (
     <>
-
-      <div className=" w-full max-w-md rounded-lg mx-auto shadow-md bg-emerald-500 px-4 my-65 py-3">
-        <h1 className=" text-center text-black text-4xl p-2">Password Generator</h1>
-        <div className="flex shadow rounded-lg  overflow-hidden mb-4">
-          <input
-            type="text"
-            value={password}
-            className=" bg-white outline-none w-full pt-2 py-1 px-3"
-            placeholder="Password"
-            ref={passwordRef}
-            readOnly />
-          <button onClick={copytoclipboard} className=" bg-gray-400 hover:bg-blue-400 " >Copy</button>
-        </div>
-
-        <div className="flex text-sm gap-x-2">
-          <div className=" flex items-center gap-x-1">
+      <div
+        className="w-full min-h-screen flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: "url('public/bg.png')" }}
+      >
+        <div className=" w-full max-w-md rounded-lg mx-auto shadow-md bg-emerald-500 px-4 my-65 py-3">
+          <h1 className=" text-center text-black text-4xl p-2">Password Generator</h1>
+          <div className="flex shadow rounded-lg  overflow-hidden mb-4">
             <input
-              type="range"
-              min={6}
-              max={100}
-              value={length}
-              className=" cursor-pointer"
-              onChange={(e) => { setLength(e.target.value) }} />
-            <label>Length: {length}</label>
+              type="text"
+              value={password}
+              className=" bg-white outline-none w-full pt-2 py-1 px-3"
+              placeholder="Password"
+              ref={passwordRef}
+              readOnly />
+            <button onClick={copytoclipboard} className=" bg-gray-400 hover:bg-blue-400 " >Copy</button>
           </div>
 
-          <div className="flex items-center gap-x-1">
-            <input
-              type="checkbox"
-              defaultChecked={numberAllowed}
-              id="numberInput"
-              onChange={() => {
-                setNumber((prev) => !prev);
-              }}
-            />
-            <label htmlFor="numberInput">Numbers</label>
-          </div>
-          <div className="flex items-center gap-x-1">
-            <input
-              type="checkbox"
-              defaultChecked={charAllowed}
-              id="characterInput"
-              onChange={() => {
-                setChar((prev) => !prev)
-              }}
-            />
-            <label htmlFor="characterInput">S-Characters</label>
+          <div className="flex text-sm gap-x-2">
+            <div className=" flex items-center gap-x-1">
+              <input
+                type="range"
+                min={6}
+                max={100}
+                value={length}
+                className=" cursor-pointer"
+                onChange={(e) => { setLength(e.target.value) }} />
+              <label>Length: {length}</label>
+            </div>
+
+            <div className="flex items-center gap-x-1">
+              <input
+                type="checkbox"
+                defaultChecked={numberAllowed}
+                id="numberInput"
+                onChange={() => {
+                  setNumber((prev) => !prev);
+                }}
+              />
+              <label htmlFor="numberInput">Numbers</label>
+            </div>
+            <div className="flex items-center gap-x-1">
+              <input
+                type="checkbox"
+                defaultChecked={charAllowed}
+                id="characterInput"
+                onChange={() => {
+                  setChar((prev) => !prev)
+                }}
+              />
+              <label htmlFor="characterInput">S-Characters</label>
+            </div>
           </div>
         </div>
       </div>
