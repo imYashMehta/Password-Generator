@@ -40,8 +40,8 @@ function App() {
   return (
     <>
       <div
-        className="w-full min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('public/bg.png')" }}
+        className="w-full min-h-screen flex items-center justify-center bg-cover bg-center bg-[url('/bg.png')]"
+        
       >
         <div className=" w-full max-w-md rounded-lg mx-auto shadow-md bg-emerald-500 px-4 my-65 py-3">
           <h1 className=" text-center text-black text-4xl p-2">Password Generator</h1>
